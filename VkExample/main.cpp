@@ -12,7 +12,7 @@
 int main(int argc, char *argv[])
 {
 	setlocale(LC_ALL,"Russian");
-	
+	std::cout << "tr";
 	qDebug() << "start\n";
 	QCoreApplication a(argc, argv);
 	
