@@ -1,7 +1,7 @@
 #pragma once
-#include "vkrequest.h"
+#include "ivkrequest.h"
 
-class VkUserRequest : public VkRequest
+class VkUserRequest : public IVkRequest
 {
 private:
 	QSet<QString> fields;
@@ -11,7 +11,7 @@ public:
 	VkUserRequest(void);
 	void addFields(QString & );
 	void addUser(unsigned int id);
-	static VkRequest * makeUserRequestByConsole();
+	static IVkRequest * makeUserRequestByConsole();
 	QString getRequestUri();
 	~VkUserRequest(void);
 };

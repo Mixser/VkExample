@@ -55,15 +55,18 @@ void VkUserRequest::addFields(QString & field) {
 	fields.insert(field);
 }
 
-VkRequest * VkUserRequest::makeUserRequestByConsole() {
+IVkRequest * VkUserRequest::makeUserRequestByConsole() {
 	VkUserRequest * user = new VkUserRequest();
 	int user_id = 0;
+	std::cout << "Enter user ID:";
 	std::cin >> user_id;
 	user->addUser(user_id);
+	std::cout << "Enter count of special fields:";
 	int count_of_field;
 	std::cin>>count_of_field;
 	for (int i = 0; i < count_of_field; i++) {
 		char line[256];
+		std::cout << "Field " << i;
 		std::cin >> line;
 		user->addFields(QString(line));
 	}

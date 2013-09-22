@@ -1,11 +1,14 @@
 #include "VkRequestSender.h"
 
-
-VkRequestSender::VkRequestSender(void)
+VkRequestSender::VkRequestSender()
 {
 	manager = new QNetworkAccessManager();
-	semaphore = new QSemaphore(0);
+	
 	connect(manager, SIGNAL(finished(QNetworkReply *)), SLOT(getRequestResult(QNetworkReply *)));
+}
+
+void VkRequestSender::setAccessToken(QString & access_token) {
+	this->access_token = access_token;
 }
 
 void VkRequestSender::getRequestResult(QNetworkReply * reply) {
@@ -20,34 +23,16 @@ void VkRequestSender::getRequestResult(QNetworkReply * reply) {
 	reply->deleteLater();
 }
 
-void VkRequestSender::sendRequest(QString access_token) {
-	QString url = "https://api.vk.com/method/getProfiles.xml?uid=66748%1";
-	url = url.arg(access_token);
-	QNetworkRequest req(url);
-	manager->get(req);
-}
 
 
-void VkRequestSender::sendRequest(VkRequest * request, QString access_token) {
-	QString url = request->getRequestUri() + "&" + access_token;
+
+void VkRequestSender::sendRequest(IVkRequest * request) {
+	QString url = request->getRequestUri() + "&" + this->access_token;
 
 	QNetworkRequest req(url);
 	manager->get(req);
 }
 
-void VkRequestSender::sendRequest(VkRequest * request, QString * access_token) {
-	QString url = request->getRequestUri() + "&" + *access_token;
-
-	QNetworkRequest req(url);
-	manager->get(req);
-}
-
-
-
-QString VkRequestSender::getReply() {
-
-	return serverReply;
-}
 
 VkRequestSender::~VkRequestSender(void)
 {

@@ -67,6 +67,24 @@
     <ClCompile Include="GeneratedFiles\Release\moc_VkApp.cpp">
       <Filter>Generated Files\Release</Filter>
     </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_ConsoleMenu.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_ConsoleMenu.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_ConsoleMenuItem.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_ConsoleMenuItem.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="ConsoleMenu.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ConsoleMenuItem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="VkServerAuth.h">
@@ -78,12 +96,18 @@
     <CustomBuild Include="VkApp.h">
       <Filter>Header Files</Filter>
     </CustomBuild>
+    <CustomBuild Include="ConsoleMenu.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ConsoleMenuItem.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="VkRequest.h">
+    <ClInclude Include="VkUserRequest.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="VkUserRequest.h">
+    <ClInclude Include="IVkRequest.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

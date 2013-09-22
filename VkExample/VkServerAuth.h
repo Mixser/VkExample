@@ -11,7 +11,7 @@ private:
 	QNetworkAccessManager * manager;
 	QSemaphore * semaphore;
 signals:
-	void authenticated();
+	void authenticated(QString & access_token);
 private slots:
 	void getReply(QNetworkReply *);
 

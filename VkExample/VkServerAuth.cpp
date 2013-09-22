@@ -21,7 +21,7 @@ void VkServerAuth::getReply(QNetworkReply * reply) {
 		if (req.indexIn(replyBody, 0) != -1) {
 		//	semaphore->release();
 			this->access_token = req.cap(1);
-			emit authenticated();
+			emit authenticated(this->access_token);
 		//	qDebug() << this->access_token;
 		}
 

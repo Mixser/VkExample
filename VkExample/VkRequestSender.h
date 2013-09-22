@@ -2,27 +2,25 @@
 #include <QtCore>
 
 #include <QtNetwork>
-#include "VkRequest.h"
+#include "IVkRequest.h"
 class VkRequestSender : public QObject
 {
 	Q_OBJECT
 private:
 	QNetworkAccessManager * manager;
 	QString serverReply;
-	QSemaphore * semaphore;
-
+	QString access_token;
 private slots:
 	void getRequestResult(QNetworkReply *);
 public slots:
-	void sendRequest(VkRequest *, QString * access_token);
-
+	void sendRequest(IVkRequest *);
+	void setAccessToken(QString & access_token);
 signals: 
 	void replyIsReady(QString * data);
 public:
-	VkRequestSender(void);
-	void sendRequest(QString access_token);
-	void sendRequest(VkRequest *, QString access_token);
-	QString getReply();
+	VkRequestSender();
+	
+
 	~VkRequestSender(void);
 };
 

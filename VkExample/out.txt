@@ -1,1 +1,1 @@
-{"response":[{"uid":19886701,"first_name":"Тима","last_name":"Акулич","sex":2,"city":"0","online":1}]}
+{"response":[{"uid":1,"first_name":"Павел","last_name":"Дуров","sex":2}]}

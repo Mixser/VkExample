@@ -1,13 +1,33 @@
+
 #pragma once
 
 #include <QObject>
+#include <QList>
 
-class ConsoleMenu
+#include "ConsoleMenuItem.h"
+#include "IVkRequest.h"
+#include "VkRequestSender.h"
+#include "VkUserRequest.h"
+class ConsoleMenu : public QObject
 {
-private: 
+	Q_OBJECT
+	QList<ConsoleMenuItem *> menuItems;
+	VkRequestSender * sender;
+	void chooseMenuItem();
 
+	
+
+signals:
+	void selected(IVkRequest *);
+	
 public:
-	ConsoleMenu(void);
+	ConsoleMenu(VkRequestSender *);
+
+	void addMenuItem(QString & title, void ( *PtrAction)(VkRequestSender *));
+
 	~ConsoleMenu(void);
+public slots:
+	void print();
+
 };
 
