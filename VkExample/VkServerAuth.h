@@ -10,6 +10,7 @@ private:
 	QString access_token;
 	QNetworkAccessManager * manager;
 	QSemaphore * semaphore;
+	//TODO: do smth @mixser
 signals:
 	void authenticated(QString & access_token);
 private slots:
