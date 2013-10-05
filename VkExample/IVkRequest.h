@@ -8,6 +8,7 @@ class IVkRequest
 protected:
 	bool xmlResult;
 public:
+// TODO: do smth
 	IVkRequest(void);
 	void setXml(bool);
 	virtual QString getRequestUri() = 0;
